@@ -169,7 +169,6 @@ Name | Type | Description  | Notes
 | **200** | Successful response |  -  |
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
-| **405** | Not Allowed error |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

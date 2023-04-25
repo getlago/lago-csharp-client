@@ -4,7 +4,7 @@ Lago API documentation
 
 Lago API allows your application to push customer information and metrics (events) from your application to the billing application.
 
-The version of the OpenAPI document: 0.0.1
+The version of the OpenAPI document: 0.21.0-beta
 Contact: tech@getlago.com
 -->
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -81,7 +81,7 @@ Contact: tech@getlago.com
   <Import Project="$(MsBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
       <ProjectReference Include="..\Org.OpenAPITools\Org.OpenAPITools.csproj">
-          <Project>{A0E2CF68-AE4C-4B33-8EB2-DE1B0F537DCB}</Project>
+          <Project>{934A25BF-9ADC-4CA7-953C-48F18C74328F}</Project>
           <Name>Org.OpenAPITools</Name>
       </ProjectReference>
   </ItemGroup>
