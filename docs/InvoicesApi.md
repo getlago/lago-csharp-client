@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**FindAllInvoices**](InvoicesApi.md#findallinvoices) | **GET** /invoices/ | Find all invoices
 [**FindInvoice**](InvoicesApi.md#findinvoice) | **GET** /invoices/{id} | Find invoice by ID
 [**RefreshInvoice**](InvoicesApi.md#refreshinvoice) | **PUT** /invoices/{id}/refresh | Refresh a draft invoice
+[**RetryPayment**](InvoicesApi.md#retrypayment) | **POST** /invoices/{id}/retry_payment | Retry invoice payment
 [**UpdateInvoice**](InvoicesApi.md#updateinvoice) | **PUT** /invoices/{id} | Update an existing invoice status
 
 
@@ -420,6 +421,87 @@ Name | Type | Description  | Notes
 | **200** | Successful response |  -  |
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## RetryPayment
+
+> void RetryPayment (string id)
+
+Retry invoice payment
+
+Retry invoice payment
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class RetryPaymentExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
+            // Configure HTTP bearer authorization: bearerAuth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new InvoicesApi(Configuration.Default);
+            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the existing Lago Invoice
+
+            try
+            {
+                // Retry invoice payment
+                apiInstance.RetryPayment(id);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling InvoicesApi.RetryPayment: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| ID of the existing Lago Invoice | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **401** | Unauthorized error |  -  |
+| **404** | Not Found error |  -  |
+| **405** | Not Allowed error |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

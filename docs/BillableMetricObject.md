@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **FieldName** | **string** |  | [optional] 
 **AggregationType** | **string** | Aggregation type | [optional] 
 **Group** | [**BillableMetricGroup**](BillableMetricGroup.md) |  | [optional] 
+**ActiveSubscriptionsCount** | **int** |  | [optional] 
+**DraftInvoicesCount** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
