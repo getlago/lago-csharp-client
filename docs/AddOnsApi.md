@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**CreateAddOn**](AddOnsApi.md#createaddon) | **POST** /add_ons | Create a new add-on
 [**DestroyAddOn**](AddOnsApi.md#destroyaddon) | **DELETE** /add_ons/{code} | Delete an add-on
 [**FindAddOn**](AddOnsApi.md#findaddon) | **GET** /add_ons/{code} | Find add-on by code
-[**FindAllAddOns**](AddOnsApi.md#findalladdons) | **GET** /add_ons/ | Find add-ons
+[**FindAllAddOns**](AddOnsApi.md#findalladdons) | **GET** /add_ons | Find add-ons
 [**UpdateAddOn**](AddOnsApi.md#updateaddon) | **PUT** /add_ons/{code} | Update an existing add-on
 
 
@@ -252,7 +252,6 @@ Name | Type | Description  | Notes
 | **200** | Successful response |  -  |
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
-| **405** | Not Allowed error |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -343,7 +342,7 @@ Name | Type | Description  | Notes
 
 ## FindAllAddOns
 
-> AddOns FindAllAddOns (int? page = null, int? perPage = null)
+> AddOnsPaginated FindAllAddOns (int? page = null, int? perPage = null)
 
 Find add-ons
 
@@ -375,7 +374,7 @@ namespace Example
             try
             {
                 // Find add-ons
-                AddOns result = apiInstance.FindAllAddOns(page, perPage);
+                AddOnsPaginated result = apiInstance.FindAllAddOns(page, perPage);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -399,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AddOns**](AddOns.md)
+[**AddOnsPaginated**](AddOnsPaginated.md)
 
 ### Authorization
 

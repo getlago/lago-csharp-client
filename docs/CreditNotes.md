@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_CreditNotes** | [**List&lt;CreditNoteObject&gt;**](CreditNoteObject.md) |  | [optional] 
+**_CreditNotes** | [**List&lt;CreditNoteObject&gt;**](CreditNoteObject.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

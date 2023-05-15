@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**Type** | **string** |  | [optional] 
-**Code** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | 
+**Type** | **string** |  | 
+**Code** | **string** |  | 
+**Name** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

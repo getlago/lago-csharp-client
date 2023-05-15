@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | **int** |  | [optional] 
-**Error** | **string** |  | [optional] 
-**Code** | **string** |  | [optional] 
-**ErrorDetails** | **Object** |  | [optional] 
+**Status** | **int** |  | 
+**Error** | **string** |  | 
+**Code** | **string** |  | 
+**ErrorDetails** | **Object** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

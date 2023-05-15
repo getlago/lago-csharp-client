@@ -5,9 +5,12 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateCustomer**](CustomersApi.md#createcustomer) | **POST** /customers | Create a customer
-[**FindAllCustomers**](CustomersApi.md#findallcustomers) | **GET** /customers/ | Find customers
+[**DeleteAppliedCoupon**](CustomersApi.md#deleteappliedcoupon) | **DELETE** /customers/{customer_external_id}/applied_coupons/{applied_coupon_id} | Delete customer&#39;s appplied coupon
+[**DestroyCustomer**](CustomersApi.md#destroycustomer) | **DELETE** /customers/{external_id} | Delete a customer
+[**FindAllCustomers**](CustomersApi.md#findallcustomers) | **GET** /customers | Find customers
 [**FindCustomer**](CustomersApi.md#findcustomer) | **GET** /customers/{external_id} | Find customer by external ID
 [**FindCustomerCurrentUsage**](CustomersApi.md#findcustomercurrentusage) | **GET** /customers/{customer_external_id}/current_usage | Find customer current usage
+[**GetCustomerPortalUrl**](CustomersApi.md#getcustomerportalurl) | **GET** /customers/{customer_external_id}/portal_url | Get customer portal URL
 
 
 
@@ -93,9 +96,173 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## DeleteAppliedCoupon
+
+> AppliedCoupon DeleteAppliedCoupon (string customerExternalId, string appliedCouponId)
+
+Delete customer's appplied coupon
+
+Delete customer's appplied coupon
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class DeleteAppliedCouponExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
+            // Configure HTTP bearer authorization: bearerAuth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new CustomersApi(Configuration.Default);
+            var customerExternalId = 12345;  // string | External ID of the existing customer
+            var appliedCouponId = 54321;  // string | Applied Coupon Lago ID
+
+            try
+            {
+                // Delete customer's appplied coupon
+                AppliedCoupon result = apiInstance.DeleteAppliedCoupon(customerExternalId, appliedCouponId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling CustomersApi.DeleteAppliedCoupon: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerExternalId** | **string**| External ID of the existing customer | 
+ **appliedCouponId** | **string**| Applied Coupon Lago ID | 
+
+### Return type
+
+[**AppliedCoupon**](AppliedCoupon.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **401** | Unauthorized error |  -  |
+| **404** | Not Found error |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DestroyCustomer
+
+> Customer DestroyCustomer (string externalId)
+
+Delete a customer
+
+Return the deleted customer
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class DestroyCustomerExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
+            // Configure HTTP bearer authorization: bearerAuth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new CustomersApi(Configuration.Default);
+            var externalId = 12345;  // string | External ID of the existing customer
+
+            try
+            {
+                // Delete a customer
+                Customer result = apiInstance.DestroyCustomer(externalId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling CustomersApi.DestroyCustomer: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **externalId** | **string**| External ID of the existing customer | 
+
+### Return type
+
+[**Customer**](Customer.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **401** | Unauthorized error |  -  |
+| **404** | Not Found error |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## FindAllCustomers
 
-> Customers FindAllCustomers (int? page = null, int? perPage = null)
+> CustomersPaginated FindAllCustomers (int? page = null, int? perPage = null)
 
 Find customers
 
@@ -127,7 +294,7 @@ namespace Example
             try
             {
                 // Find customers
-                Customers result = apiInstance.FindAllCustomers(page, perPage);
+                CustomersPaginated result = apiInstance.FindAllCustomers(page, perPage);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -151,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Customers**](Customers.md)
+[**CustomersPaginated**](CustomersPaginated.md)
 
 ### Authorization
 
@@ -331,6 +498,88 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 | **200** | Successful response |  -  |
 | **401** | Unauthorized error |  -  |
+| **404** | Not Found error |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCustomerPortalUrl
+
+> GetCustomerPortalUrl200Response GetCustomerPortalUrl (string customerExternalId)
+
+Get customer portal URL
+
+Get customer portal URL
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class GetCustomerPortalUrlExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
+            // Configure HTTP bearer authorization: bearerAuth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new CustomersApi(Configuration.Default);
+            var customerExternalId = 12345;  // string | External ID of the existing customer
+
+            try
+            {
+                // Get customer portal URL
+                GetCustomerPortalUrl200Response result = apiInstance.GetCustomerPortalUrl(customerExternalId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling CustomersApi.GetCustomerPortalUrl: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **customerExternalId** | **string**| External ID of the existing customer | 
+
+### Return type
+
+[**GetCustomerPortalUrl200Response**](GetCustomerPortalUrl200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **401** | Unauthorized error |  -  |
+| **403** | Forbidden |  -  |
 | **404** | Not Found error |  -  |
 
 [[Back to top]](#)

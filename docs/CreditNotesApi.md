@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateCreditNote**](CreditNotesApi.md#createcreditnote) | **POST** /credit_notes | Create a new Credit note
 [**DownloadCreditNote**](CreditNotesApi.md#downloadcreditnote) | **POST** /credit_notes/{id}/download | Download an existing credit note
-[**FindAllCreditNotes**](CreditNotesApi.md#findallcreditnotes) | **GET** /credit_notes/ | Find Credit notes
+[**FindAllCreditNotes**](CreditNotesApi.md#findallcreditnotes) | **GET** /credit_notes | Find Credit notes
 [**FindCreditNote**](CreditNotesApi.md#findcreditnote) | **GET** /credit_notes/{id} | Find credit note
 [**UpdateCreditNote**](CreditNotesApi.md#updatecreditnote) | **PUT** /credit_notes/{id} | Update an existing credit note
 [**VoidCreditNote**](CreditNotesApi.md#voidcreditnote) | **PUT** /credit_notes/{id}/void | Void existing credit note
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ## DownloadCreditNote
 
-> CreditNote DownloadCreditNote (string id)
+> CreditNote DownloadCreditNote (Guid id)
 
 Download an existing credit note
 
@@ -123,7 +123,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CreditNotesApi(Configuration.Default);
-            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the existing Lago Credit note
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Credit note
 
             try
             {
@@ -147,7 +147,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of the existing Lago Credit note | 
+ **id** | **Guid**| ID of the existing Lago Credit note | 
 
 ### Return type
 
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ## VoidCreditNote
 
-> CreditNote VoidCreditNote (string id)
+> CreditNote VoidCreditNote (Guid id)
 
 Void existing credit note
 
@@ -454,7 +454,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new CreditNotesApi(Configuration.Default);
-            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the existing Lago Credit note
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Credit note
 
             try
             {
@@ -478,7 +478,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of the existing Lago Credit note | 
+ **id** | **Guid**| ID of the existing Lago Credit note | 
 
 ### Return type
 

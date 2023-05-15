@@ -5,10 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**LagoBillableMetricId** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
-**ChargeModel** | **string** | Charge model type | [optional] 
+**LagoId** | **Guid** |  | 
+**LagoBillableMetricId** | **Guid** |  | 
+**BillableMetricCode** | **string** |  | 
+**CreatedAt** | **DateTime** |  | 
+**ChargeModel** | **string** | Charge model type | 
+**Instant** | **bool** |  | [optional] 
+**MinAmountCents** | **int** |  | [optional] 
 **Properties** | **Object** |  | [optional] 
 **GroupProperties** | [**List&lt;GroupPropertiesObject&gt;**](GroupPropertiesObject.md) |  | [optional] 
 

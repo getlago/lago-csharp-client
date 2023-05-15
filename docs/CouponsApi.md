@@ -7,8 +7,8 @@ Method | HTTP request | Description
 [**ApplyCoupon**](CouponsApi.md#applycoupon) | **POST** /applied_coupons | Apply a coupon to a customer
 [**CreateCoupon**](CouponsApi.md#createcoupon) | **POST** /coupons | Create a new coupon
 [**DestroyCoupon**](CouponsApi.md#destroycoupon) | **DELETE** /coupons/{code} | Delete a coupon
-[**FindAllAppliedCoupons**](CouponsApi.md#findallappliedcoupons) | **GET** /applied_coupons/ | Find Applied Coupons
-[**FindAllCoupons**](CouponsApi.md#findallcoupons) | **GET** /coupons/ | Find Coupons
+[**FindAllAppliedCoupons**](CouponsApi.md#findallappliedcoupons) | **GET** /applied_coupons | Find Applied Coupons
+[**FindAllCoupons**](CouponsApi.md#findallcoupons) | **GET** /coupons | Find Coupons
 [**FindCoupon**](CouponsApi.md#findcoupon) | **GET** /coupons/{code} | Find coupon by code
 [**UpdateCoupon**](CouponsApi.md#updatecoupon) | **PUT** /coupons/{code} | Update an existing coupon
 
@@ -253,7 +253,6 @@ Name | Type | Description  | Notes
 | **200** | Successful response |  -  |
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
-| **405** | Not Allowed error |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -263,7 +262,7 @@ Name | Type | Description  | Notes
 
 ## FindAllAppliedCoupons
 
-> AppliedCoupons FindAllAppliedCoupons (int? page = null, int? perPage = null, string status = null, string externalCustomerId = null)
+> AppliedCouponsPaginated FindAllAppliedCoupons (int? page = null, int? perPage = null, string status = null, string externalCustomerId = null)
 
 Find Applied Coupons
 
@@ -297,7 +296,7 @@ namespace Example
             try
             {
                 // Find Applied Coupons
-                AppliedCoupons result = apiInstance.FindAllAppliedCoupons(page, perPage, status, externalCustomerId);
+                AppliedCouponsPaginated result = apiInstance.FindAllAppliedCoupons(page, perPage, status, externalCustomerId);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -323,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AppliedCoupons**](AppliedCoupons.md)
+[**AppliedCouponsPaginated**](AppliedCouponsPaginated.md)
 
 ### Authorization
 
@@ -349,7 +348,7 @@ Name | Type | Description  | Notes
 
 ## FindAllCoupons
 
-> Coupons FindAllCoupons (int? page = null, int? perPage = null)
+> CouponsPaginated FindAllCoupons (int? page = null, int? perPage = null)
 
 Find Coupons
 
@@ -381,7 +380,7 @@ namespace Example
             try
             {
                 // Find Coupons
-                Coupons result = apiInstance.FindAllCoupons(page, perPage);
+                CouponsPaginated result = apiInstance.FindAllCoupons(page, perPage);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -405,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Coupons**](Coupons.md)
+[**CouponsPaginated**](CouponsPaginated.md)
 
 ### Authorization
 

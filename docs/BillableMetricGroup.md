@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Key** | **string** |  | [optional] 
-**Values** | [**List&lt;BillableMetricGroupValuesInner&gt;**](BillableMetricGroupValuesInner.md) |  | [optional] 
+**Key** | **string** |  | 
+**Values** | [**List&lt;BillableMetricGroupValuesInner&gt;**](BillableMetricGroupValuesInner.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

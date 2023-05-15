@@ -5,13 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Code** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | 
+**Name** | **string** |  | 
+**Code** | **string** |  | 
 **Description** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
-**AmountCents** | **int** |  | [optional] 
-**AmountCurrency** | **string** |  | [optional] 
+**CreatedAt** | **DateTime** |  | 
+**AmountCents** | **int** |  | 
+**AmountCurrency** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

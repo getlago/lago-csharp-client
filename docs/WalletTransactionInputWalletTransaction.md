@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WalletId** | **string** |  | [optional] 
+**WalletId** | **Guid** |  | 
 **PaidCredits** | **decimal** |  | [optional] 
 **GrantedCredits** | **decimal** |  | [optional] 
 

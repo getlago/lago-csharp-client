@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**GroupId** | **string** |  | [optional] 
-**Values** | **Object** |  | [optional] 
+**GroupId** | **string** |  | 
+**Values** | **Object** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

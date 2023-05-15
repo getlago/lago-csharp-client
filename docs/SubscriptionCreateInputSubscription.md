@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExternalCustomerId** | **string** |  | [optional] 
-**PlanCode** | **string** |  | [optional] 
+**ExternalCustomerId** | **string** |  | 
+**PlanCode** | **string** |  | 
 **Name** | **string** |  | [optional] 
-**ExternalId** | **string** |  | [optional] 
+**ExternalId** | **string** |  | 
 **BillingTime** | **string** | Billing time | [optional] 
-**SubscriptionAt** | **string** |  | [optional] 
+**SubscriptionAt** | **DateTime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

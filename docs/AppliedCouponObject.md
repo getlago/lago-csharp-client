@@ -5,22 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**LagoCouponId** | **string** |  | [optional] 
-**CouponCode** | **string** |  | [optional] 
-**LagoCustomerId** | **string** |  | [optional] 
-**ExternalCustomerId** | **string** |  | [optional] 
-**Status** | **string** | Status | [optional] 
-**AmountCents** | **int** |  | [optional] 
+**LagoId** | **Guid** |  | 
+**LagoCouponId** | **Guid** |  | 
+**CouponCode** | **string** |  | 
+**LagoCustomerId** | **Guid** |  | 
+**ExternalCustomerId** | **string** |  | 
+**Status** | **string** | Status | 
+**AmountCents** | **int** |  | 
 **AmountCentsRemaining** | **int** |  | [optional] 
-**AmountCurrency** | **string** |  | [optional] 
+**AmountCurrency** | **string** |  | 
 **PercentageRate** | **decimal** |  | [optional] 
-**Frequency** | **string** | Frequency type | [optional] 
+**Frequency** | **string** | Frequency type | 
 **FrequencyDuration** | **int** |  | [optional] 
 **FrequencyDurationRemaining** | **int** |  | [optional] 
-**ExpirationAt** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
-**TerminatedAt** | **string** |  | [optional] 
+**ExpirationAt** | **DateTime** |  | [optional] 
+**CreatedAt** | **DateTime** |  | 
+**TerminatedAt** | **DateTime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

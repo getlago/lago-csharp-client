@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExternalCustomerId** | **string** |  | [optional] 
-**AddOnCode** | **string** |  | [optional] 
+**ExternalCustomerId** | **string** |  | 
+**AddOnCode** | **string** |  | 
 **AmountCents** | **int** |  | [optional] 
 **AmountCurrency** | **string** |  | [optional] 
 

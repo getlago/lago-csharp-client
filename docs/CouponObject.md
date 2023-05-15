@@ -5,19 +5,23 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Code** | **string** |  | [optional] 
-**CouponType** | **string** | Coupon type | [optional] 
+**LagoId** | **Guid** |  | 
+**Name** | **string** |  | 
+**Code** | **string** |  | 
+**CouponType** | **string** | Coupon type | 
 **AmountCents** | **int** |  | [optional] 
 **AmountCurrency** | **string** |  | [optional] 
 **Reusable** | **bool** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
+**LimitedPlans** | **bool** |  | [optional] 
+**PlanCodes** | **List&lt;string&gt;** |  | [optional] 
+**LimitedBillableMetrics** | **bool** |  | [optional] 
+**BillableMetricCodes** | **List&lt;string&gt;** |  | [optional] 
+**CreatedAt** | **DateTime** |  | 
 **PercentageRate** | **decimal** |  | [optional] 
-**Frequency** | **string** | Frequency type | [optional] 
+**Frequency** | **string** | Frequency type | 
 **FrequencyDuration** | **int** |  | [optional] 
-**ExpirationAt** | **string** |  | [optional] 
-**Expiration** | **string** | Expiration type | [optional] 
+**ExpirationAt** | **DateTime** |  | [optional] 
+**Expiration** | **string** | Expiration type | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

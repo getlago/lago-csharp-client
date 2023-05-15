@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Units** | **decimal** |  | [optional] 
-**AmountCents** | **int** |  | [optional] 
-**AmountCurrency** | **string** |  | [optional] 
-**Charge** | [**ChargeUsageObjectCharge**](ChargeUsageObjectCharge.md) |  | [optional] 
-**BillableMetric** | [**ChargeUsageObjectBillableMetric**](ChargeUsageObjectBillableMetric.md) |  | [optional] 
-**Groups** | [**List&lt;ChargeUsageObjectGroupsInner&gt;**](ChargeUsageObjectGroupsInner.md) |  | [optional] 
+**Units** | **decimal** |  | 
+**AmountCents** | **int** |  | 
+**AmountCurrency** | **string** |  | 
+**Charge** | [**ChargeUsageObjectCharge**](ChargeUsageObjectCharge.md) |  | 
+**BillableMetric** | [**ChargeUsageObjectBillableMetric**](ChargeUsageObjectBillableMetric.md) |  | 
+**Groups** | [**List&lt;ChargeUsageObjectGroupsInner&gt;**](ChargeUsageObjectGroupsInner.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

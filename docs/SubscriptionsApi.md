@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateSubscription**](SubscriptionsApi.md#createsubscription) | **POST** /subscriptions | Assign a plan to a customer
 [**DestroySubscription**](SubscriptionsApi.md#destroysubscription) | **DELETE** /subscriptions/{external_id} | Terminate a subscription
-[**FindAllSubscriptions**](SubscriptionsApi.md#findallsubscriptions) | **GET** /subscriptions/ | Find subscriptions
+[**FindAllSubscriptions**](SubscriptionsApi.md#findallsubscriptions) | **GET** /subscriptions | Find subscriptions
 [**UpdateSubscription**](SubscriptionsApi.md#updatesubscription) | **PUT** /subscriptions/{external_id} | Update an existing subscription
 
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ## FindAllSubscriptions
 
-> Subscriptions FindAllSubscriptions (string externalCustomerId, int? page = null, int? perPage = null)
+> SubscriptionsPaginated FindAllSubscriptions (int? page = null, int? perPage = null, string externalCustomerId = null, string planCode = null)
 
 Find subscriptions
 
@@ -204,14 +204,15 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SubscriptionsApi(Configuration.Default);
-            var externalCustomerId = 12345;  // string | External customer ID
             var page = 2;  // int? | Number of page (optional) 
             var perPage = 20;  // int? | Number of records per page (optional) 
+            var externalCustomerId = 12345;  // string | External customer ID (optional) 
+            var planCode = example_code;  // string | Code of the plan attached to the subscription (optional) 
 
             try
             {
                 // Find subscriptions
-                Subscriptions result = apiInstance.FindAllSubscriptions(externalCustomerId, page, perPage);
+                SubscriptionsPaginated result = apiInstance.FindAllSubscriptions(page, perPage, externalCustomerId, planCode);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -230,13 +231,14 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalCustomerId** | **string**| External customer ID | 
  **page** | **int?**| Number of page | [optional] 
  **perPage** | **int?**| Number of records per page | [optional] 
+ **externalCustomerId** | **string**| External customer ID | [optional] 
+ **planCode** | **string**| Code of the plan attached to the subscription | [optional] 
 
 ### Return type
 
-[**Subscriptions**](Subscriptions.md)
+[**SubscriptionsPaginated**](SubscriptionsPaginated.md)
 
 ### Authorization
 

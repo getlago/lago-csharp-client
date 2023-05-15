@@ -5,32 +5,33 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**SequentialId** | **int** |  | [optional] 
-**Number** | **string** |  | [optional] 
-**LagoInvoiceId** | **string** |  | [optional] 
-**InvoiceNumber** | **string** |  | [optional] 
-**IssuingDate** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | 
+**SequentialId** | **int** |  | 
+**Number** | **string** |  | 
+**LagoInvoiceId** | **Guid** |  | 
+**InvoiceNumber** | **string** |  | 
+**IssuingDate** | **DateTime** |  | 
 **CreditStatus** | **string** | Credit status | [optional] 
 **RefundStatus** | **string** | Refund status | [optional] 
-**Reason** | **string** | Reason | [optional] 
+**Reason** | **string** | Reason | 
 **Description** | **string** |  | [optional] 
-**TotalAmountCents** | **int** |  | [optional] 
-**TotalAmountCurrency** | **string** |  | [optional] 
-**VatAmountCents** | **int** |  | [optional] 
-**VatAmountCurrency** | **string** |  | [optional] 
-**SubTotalVatExcludedAmountCents** | **int** |  | [optional] 
-**SubTotalVatExcludedAmountCurrency** | **string** |  | [optional] 
-**BalanceAmountCents** | **int** |  | [optional] 
-**BalanceAmountCurrency** | **string** |  | [optional] 
-**CreditAmountCents** | **int** |  | [optional] 
-**CreditAmountCurrency** | **string** |  | [optional] 
-**RefundAmountCents** | **int** |  | [optional] 
-**RefundAmountCurrency** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
-**UpdatedAt** | **string** |  | [optional] 
+**Currency** | **string** |  | 
+**TotalAmountCents** | **int** |  | 
+**TotalAmountCurrency** | **string** |  | 
+**VatAmountCents** | **int** |  | 
+**VatAmountCurrency** | **string** |  | 
+**SubTotalVatExcludedAmountCents** | **int** |  | 
+**SubTotalVatExcludedAmountCurrency** | **string** |  | 
+**BalanceAmountCents** | **int** |  | 
+**BalanceAmountCurrency** | **string** |  | 
+**CreditAmountCents** | **int** |  | 
+**CreditAmountCurrency** | **string** |  | 
+**RefundAmountCents** | **int** |  | 
+**RefundAmountCurrency** | **string** |  | 
+**CouponsAdjustementAmountCents** | **int** |  | 
+**CreatedAt** | **DateTime** |  | 
+**UpdatedAt** | **DateTime** |  | 
 **FileUrl** | **string** |  | [optional] 
-**Customer** | [**CustomerObject**](CustomerObject.md) |  | [optional] 
 **Items** | [**List&lt;CreditNoteItemObject&gt;**](CreditNoteItemObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

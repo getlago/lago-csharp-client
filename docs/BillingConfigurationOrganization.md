@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **InvoiceFooter** | **string** |  | [optional] 
 **InvoiceGracePeriod** | **int** |  | [optional] 
+**DocumentLocale** | **string** |  | [optional] 
 **VatRate** | **decimal** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

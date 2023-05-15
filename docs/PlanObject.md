@@ -5,17 +5,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
-**Code** | **string** |  | [optional] 
-**Interval** | **string** | Plan interval | [optional] 
+**LagoId** | **Guid** |  | 
+**Name** | **string** |  | 
+**CreatedAt** | **DateTime** |  | 
+**Code** | **string** |  | 
+**Interval** | **string** | Plan interval | 
 **Description** | **string** |  | [optional] 
-**AmountCents** | **int** |  | [optional] 
-**AmountCurrency** | **string** |  | [optional] 
+**AmountCents** | **int** |  | 
+**AmountCurrency** | **string** |  | 
 **TrialPeriod** | **decimal** |  | [optional] 
 **PayInAdvance** | **bool** |  | [optional] 
 **BillChargesMonthly** | **bool** |  | [optional] 
+**ActiveSubscriptionsCount** | **int** |  | 
+**DraftInvoicesCount** | **int** |  | 
 **Charges** | [**List&lt;ChargeObject&gt;**](ChargeObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

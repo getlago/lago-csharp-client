@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Subscription** | [**SubscriptionCreateInputSubscription**](SubscriptionCreateInputSubscription.md) |  | [optional] 
+**Subscription** | [**SubscriptionCreateInputSubscription**](SubscriptionCreateInputSubscription.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
