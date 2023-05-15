@@ -7,7 +7,8 @@ Method | HTTP request | Description
 [**CreateWallet**](WalletsApi.md#createwallet) | **POST** /wallets | Create a new wallet
 [**CreateWalletTransaction**](WalletsApi.md#createwallettransaction) | **POST** /wallet_transactions | Create a new wallet transaction
 [**DestroyWallet**](WalletsApi.md#destroywallet) | **DELETE** /wallets/{id} | Delete a wallet
-[**FindAllWallets**](WalletsApi.md#findallwallets) | **GET** /wallets/ | Find wallets
+[**FindAllWalletTransactions**](WalletsApi.md#findallwallettransactions) | **GET** /wallets/{id}/wallet_transactions | Find wallet transactions
+[**FindAllWallets**](WalletsApi.md#findallwallets) | **GET** /wallets | Find wallets
 [**FindWallet**](WalletsApi.md#findwallet) | **GET** /wallets/{id} | Find wallet
 [**UpdateWallet**](WalletsApi.md#updatewallet) | **PUT** /wallets/{id} | Update an existing wallet
 
@@ -97,7 +98,7 @@ Name | Type | Description  | Notes
 
 ## CreateWalletTransaction
 
-> WalletTransaction CreateWalletTransaction (WalletTransactionInput walletTransactionInput)
+> WalletTransactions CreateWalletTransaction (WalletTransactionInput walletTransactionInput)
 
 Create a new wallet transaction
 
@@ -128,7 +129,7 @@ namespace Example
             try
             {
                 // Create a new wallet transaction
-                WalletTransaction result = apiInstance.CreateWalletTransaction(walletTransactionInput);
+                WalletTransactions result = apiInstance.CreateWalletTransaction(walletTransactionInput);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -151,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WalletTransaction**](WalletTransaction.md)
+[**WalletTransactions**](WalletTransactions.md)
 
 ### Authorization
 
@@ -179,7 +180,7 @@ Name | Type | Description  | Notes
 
 ## DestroyWallet
 
-> Wallet DestroyWallet (string id)
+> Wallet DestroyWallet (Guid id)
 
 Delete a wallet
 
@@ -205,7 +206,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WalletsApi(Configuration.Default);
-            var id = 321da83c-c007-4fbb-afcd-b00c07c41ssd;  // string | Lago ID of the existing wallet
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | Lago ID of the existing wallet
 
             try
             {
@@ -229,7 +230,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Lago ID of the existing wallet | 
+ **id** | **Guid**| Lago ID of the existing wallet | 
 
 ### Return type
 
@@ -259,9 +260,98 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## FindAllWalletTransactions
+
+> WalletTransactionsPaginated FindAllWalletTransactions (Guid id, int? page = null, int? perPage = null, string status = null, string transactionType = null)
+
+Find wallet transactions
+
+Find all wallet transactions for certain wallet
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class FindAllWalletTransactionsExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
+            // Configure HTTP bearer authorization: bearerAuth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new WalletsApi(Configuration.Default);
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | Lago ID of the existing wallet
+            var page = 2;  // int? | Number of page (optional) 
+            var perPage = 20;  // int? | Number of records per page (optional) 
+            var status = pending;  // string | Status (pending or settled) (optional) 
+            var transactionType = inbound;  // string | Transaction Type (inbound or outbound) (optional) 
+
+            try
+            {
+                // Find wallet transactions
+                WalletTransactionsPaginated result = apiInstance.FindAllWalletTransactions(id, page, perPage, status, transactionType);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling WalletsApi.FindAllWalletTransactions: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Guid**| Lago ID of the existing wallet | 
+ **page** | **int?**| Number of page | [optional] 
+ **perPage** | **int?**| Number of records per page | [optional] 
+ **status** | **string**| Status (pending or settled) | [optional] 
+ **transactionType** | **string**| Transaction Type (inbound or outbound) | [optional] 
+
+### Return type
+
+[**WalletTransactionsPaginated**](WalletTransactionsPaginated.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **401** | Unauthorized error |  -  |
+| **404** | Not Found error |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## FindAllWallets
 
-> Wallets FindAllWallets (string externalCustomerId, int? page = null, int? perPage = null)
+> WalletsPaginated FindAllWallets (string externalCustomerId, int? page = null, int? perPage = null)
 
 Find wallets
 
@@ -294,7 +384,7 @@ namespace Example
             try
             {
                 // Find wallets
-                Wallets result = apiInstance.FindAllWallets(externalCustomerId, page, perPage);
+                WalletsPaginated result = apiInstance.FindAllWallets(externalCustomerId, page, perPage);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -319,7 +409,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Wallets**](Wallets.md)
+[**WalletsPaginated**](WalletsPaginated.md)
 
 ### Authorization
 
@@ -345,7 +435,7 @@ Name | Type | Description  | Notes
 
 ## FindWallet
 
-> Wallet FindWallet (string id)
+> Wallet FindWallet (Guid id)
 
 Find wallet
 
@@ -371,7 +461,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WalletsApi(Configuration.Default);
-            var id = 321da83c-c007-4fbb-afcd-b00c07c41ssd;  // string | Lago ID of the existing wallet
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | Lago ID of the existing wallet
 
             try
             {
@@ -395,7 +485,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Lago ID of the existing wallet | 
+ **id** | **Guid**| Lago ID of the existing wallet | 
 
 ### Return type
 
@@ -426,7 +516,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWallet
 
-> Wallet UpdateWallet (string id, WalletUpdateInput walletUpdateInput)
+> Wallet UpdateWallet (Guid id, WalletUpdateInput walletUpdateInput)
 
 Update an existing wallet
 
@@ -452,7 +542,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new WalletsApi(Configuration.Default);
-            var id = 321da83c-c007-4fbb-afcd-b00c07c41ssd;  // string | Lago ID of the existing wallet
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | Lago ID of the existing wallet
             var walletUpdateInput = new WalletUpdateInput(); // WalletUpdateInput | Update an existing wallet
 
             try
@@ -477,7 +567,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Lago ID of the existing wallet | 
+ **id** | **Guid**| Lago ID of the existing wallet | 
  **walletUpdateInput** | [**WalletUpdateInput**](WalletUpdateInput.md)| Update an existing wallet | 
 
 ### Return type

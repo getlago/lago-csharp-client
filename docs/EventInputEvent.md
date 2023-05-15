@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TransactionId** | **string** |  | [optional] 
+**TransactionId** | **string** |  | 
 **ExternalCustomerId** | **string** |  | [optional] 
-**Code** | **string** |  | [optional] 
+**Code** | **string** |  | 
 **Timestamp** | **int** |  | [optional] 
 **ExternalSubscriptionId** | **string** |  | [optional] 
 **Properties** | **Object** |  | [optional] 

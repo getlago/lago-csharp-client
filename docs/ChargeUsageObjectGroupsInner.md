@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | [optional] 
 **Key** | **string** |  | [optional] 
 **Value** | **string** |  | [optional] 
 **Units** | **decimal** |  | [optional] 

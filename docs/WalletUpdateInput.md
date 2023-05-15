@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Wallet** | [**WalletUpdateInputWallet**](WalletUpdateInputWallet.md) |  | [optional] 
+**Wallet** | [**WalletUpdateInputWallet**](WalletUpdateInputWallet.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

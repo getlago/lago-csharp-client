@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Event** | [**EventInputEvent**](EventInputEvent.md) |  | [optional] 
+**Event** | [**EventInputEvent**](EventInputEvent.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

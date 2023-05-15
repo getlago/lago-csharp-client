@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Organization** | [**OrganizationInputOrganization**](OrganizationInputOrganization.md) |  | [optional] 
+**Organization** | [**OrganizationInputOrganization**](OrganizationInputOrganization.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

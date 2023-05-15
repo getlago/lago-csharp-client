@@ -4,7 +4,7 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**FetchPublicKey**](WebhooksApi.md#fetchpublickey) | **GET** /webhooks/public_key/ | Fetch webhook public key
+[**FetchPublicKey**](WebhooksApi.md#fetchpublickey) | **GET** /webhooks/public_key | Fetch webhook public key
 
 
 

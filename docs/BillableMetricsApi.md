@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**CreateBillableMetric**](BillableMetricsApi.md#createbillablemetric) | **POST** /billable_metrics | Create a new billable metric
 [**DestroyBillableMetric**](BillableMetricsApi.md#destroybillablemetric) | **DELETE** /billable_metrics/{code} | Delete a billable metric
 [**FindAllBillableMetricGroups**](BillableMetricsApi.md#findallbillablemetricgroups) | **GET** /billable_metrics/{code}/groups | Find Billable metric groups
-[**FindAllBillableMetrics**](BillableMetricsApi.md#findallbillablemetrics) | **GET** /billable_metrics/ | Find Billable metrics
+[**FindAllBillableMetrics**](BillableMetricsApi.md#findallbillablemetrics) | **GET** /billable_metrics | Find Billable metrics
 [**FindBillableMetric**](BillableMetricsApi.md#findbillablemetric) | **GET** /billable_metrics/{code} | Find billable metric by code
 [**UpdateBillableMetric**](BillableMetricsApi.md#updatebillablemetric) | **PUT** /billable_metrics/{code} | Update an existing billable metric
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ## FindAllBillableMetricGroups
 
-> Groups FindAllBillableMetricGroups (string code, int? page = null, int? perPage = null)
+> GroupsPaginated FindAllBillableMetricGroups (string code, int? page = null, int? perPage = null)
 
 Find Billable metric groups
 
@@ -211,7 +211,7 @@ namespace Example
             try
             {
                 // Find Billable metric groups
-                Groups result = apiInstance.FindAllBillableMetricGroups(code, page, perPage);
+                GroupsPaginated result = apiInstance.FindAllBillableMetricGroups(code, page, perPage);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Groups**](Groups.md)
+[**GroupsPaginated**](GroupsPaginated.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ## FindAllBillableMetrics
 
-> BillableMetrics FindAllBillableMetrics (int? page = null, int? perPage = null)
+> BillableMetricsPaginated FindAllBillableMetrics (int? page = null, int? perPage = null)
 
 Find Billable metrics
 
@@ -294,7 +294,7 @@ namespace Example
             try
             {
                 // Find Billable metrics
-                BillableMetrics result = apiInstance.FindAllBillableMetrics(page, perPage);
+                BillableMetricsPaginated result = apiInstance.FindAllBillableMetrics(page, perPage);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BillableMetrics**](BillableMetrics.md)
+[**BillableMetricsPaginated**](BillableMetricsPaginated.md)
 
 ### Authorization
 

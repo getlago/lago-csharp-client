@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **PaymentProvider** | **string** | Payment provider type | [optional] 
 **ProviderCustomerId** | **string** |  | [optional] 
 **SyncWithProvider** | **bool** |  | [optional] 
+**DocumentLocale** | **string** |  | [optional] 
 **VatRate** | **decimal** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)

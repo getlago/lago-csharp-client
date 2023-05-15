@@ -6,8 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreatePlan**](PlansApi.md#createplan) | **POST** /plans | Create a new plan
 [**DestroyPlan**](PlansApi.md#destroyplan) | **DELETE** /plans/{code} | Delete a plan
-[**FindAllPlans**](PlansApi.md#findallplans) | **GET** /plans/ | Find plans
-[**FindPlan**](PlansApi.md#findplan) | **GET** /plans/{code} | Fin plan by code
+[**FindAllPlans**](PlansApi.md#findallplans) | **GET** /plans | Find plans
+[**FindPlan**](PlansApi.md#findplan) | **GET** /plans/{code} | Find plan by code
 [**UpdatePlan**](PlansApi.md#updateplan) | **PUT** /plans/{code} | Update an existing plan
 
 
@@ -169,7 +169,6 @@ Name | Type | Description  | Notes
 | **200** | Successful response |  -  |
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
-| **405** | Not Allowed error |  -  |
 
 [[Back to top]](#)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -179,7 +178,7 @@ Name | Type | Description  | Notes
 
 ## FindAllPlans
 
-> Plans FindAllPlans (int? page = null, int? perPage = null)
+> PlansPaginated FindAllPlans (int? page = null, int? perPage = null)
 
 Find plans
 
@@ -211,7 +210,7 @@ namespace Example
             try
             {
                 // Find plans
-                Plans result = apiInstance.FindAllPlans(page, perPage);
+                PlansPaginated result = apiInstance.FindAllPlans(page, perPage);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -235,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Plans**](Plans.md)
+[**PlansPaginated**](PlansPaginated.md)
 
 ### Authorization
 
@@ -263,7 +262,7 @@ Name | Type | Description  | Notes
 
 > Plan FindPlan (string code)
 
-Fin plan by code
+Find plan by code
 
 Return a single plan
 
@@ -291,7 +290,7 @@ namespace Example
 
             try
             {
-                // Fin plan by code
+                // Find plan by code
                 Plan result = apiInstance.FindPlan(code);
                 Debug.WriteLine(result);
             }

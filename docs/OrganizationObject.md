@@ -5,15 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | [optional] 
+**Name** | **string** |  | 
+**CreatedAt** | **DateTime** |  | 
 **WebhookUrl** | **string** |  | [optional] 
 **Country** | **string** |  | [optional] 
 **AddressLine1** | **string** |  | [optional] 
 **AddressLine2** | **string** |  | [optional] 
 **State** | **string** |  | [optional] 
-**Zipode** | **string** |  | [optional] 
+**Zipcode** | **string** |  | [optional] 
 **Email** | **string** |  | [optional] 
 **City** | **string** |  | [optional] 
 **LegalName** | **string** |  | [optional] 

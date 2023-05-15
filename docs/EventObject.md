@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**TransactionId** | **string** |  | [optional] 
-**LagoCustomerId** | **string** |  | [optional] 
-**ExternalCustomerId** | **string** |  | [optional] 
-**Code** | **string** |  | [optional] 
-**Timestamp** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | 
+**TransactionId** | **string** |  | 
+**LagoCustomerId** | **Guid** |  | 
+**ExternalCustomerId** | **string** |  | 
+**Code** | **string** |  | 
+**Timestamp** | **DateTime** |  | 
 **Properties** | **Object** |  | [optional] 
-**LagoSubscriptionId** | **string** |  | [optional] 
-**ExternalSubscriptionId** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
+**LagoSubscriptionId** | **Guid** |  | 
+**ExternalSubscriptionId** | **string** |  | 
+**CreatedAt** | **DateTime** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

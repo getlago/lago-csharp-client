@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | **int** |  | [optional] 
-**Error** | **string** |  | [optional] 
-**Code** | **string** |  | [optional] 
+**Status** | **int** |  | 
+**Error** | **string** |  | 
+**Code** | **string** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

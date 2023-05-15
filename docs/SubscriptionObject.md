@@ -5,22 +5,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**ExternalId** | **string** |  | [optional] 
-**LagoCustomerId** | **string** |  | [optional] 
-**ExternalCustomerId** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | 
+**ExternalId** | **string** |  | 
+**LagoCustomerId** | **Guid** |  | 
+**ExternalCustomerId** | **string** |  | 
 **Name** | **string** |  | [optional] 
-**PlanCode** | **string** |  | [optional] 
-**Status** | **string** | Subscription status | [optional] 
-**BillingTime** | **string** | Billing time | [optional] 
-**SubscriptionAt** | **string** |  | [optional] 
-**StartedAt** | **string** |  | [optional] 
-**TerminatedAt** | **string** |  | [optional] 
-**CanceledAt** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
+**PlanCode** | **string** |  | 
+**Status** | **string** | Subscription status | 
+**BillingTime** | **string** | Billing time | 
+**SubscriptionAt** | **DateTime** |  | 
+**StartedAt** | **DateTime** |  | 
+**TerminatedAt** | **DateTime** |  | [optional] 
+**CanceledAt** | **DateTime** |  | [optional] 
+**CreatedAt** | **DateTime** |  | 
 **PreviousPlanCode** | **string** |  | [optional] 
 **NextPlanCode** | **string** |  | [optional] 
-**DowngradePlanDate** | **string** |  | [optional] 
+**DowngradePlanDate** | **DateTime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

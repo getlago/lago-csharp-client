@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Invoice** | [**InvoiceInputInvoice**](InvoiceInputInvoice.md) |  | [optional] 
+**Invoice** | [**InvoiceInputInvoice**](InvoiceInputInvoice.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

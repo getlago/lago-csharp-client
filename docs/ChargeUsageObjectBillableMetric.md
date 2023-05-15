@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Code** | **string** |  | [optional] 
 **AggregationType** | **string** | Aggregation type | [optional] 

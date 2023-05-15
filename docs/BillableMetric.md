@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_BillableMetric** | [**BillableMetricObject**](BillableMetricObject.md) |  | [optional] 
+**_BillableMetric** | [**BillableMetricObject**](BillableMetricObject.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

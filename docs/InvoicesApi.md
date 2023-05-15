@@ -4,9 +4,10 @@ All URIs are relative to *https://api.getlago.com/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateInvoice**](InvoicesApi.md#createinvoice) | **POST** /invoices | Create a new invoice
 [**DownloadInvoice**](InvoicesApi.md#downloadinvoice) | **POST** /invoices/{id}/download | Download an existing invoice
 [**FinalizeInvoice**](InvoicesApi.md#finalizeinvoice) | **PUT** /invoices/{id}/finalize | Finalize a draft invoice
-[**FindAllInvoices**](InvoicesApi.md#findallinvoices) | **GET** /invoices/ | Find all invoices
+[**FindAllInvoices**](InvoicesApi.md#findallinvoices) | **GET** /invoices | Find all invoices
 [**FindInvoice**](InvoicesApi.md#findinvoice) | **GET** /invoices/{id} | Find invoice by ID
 [**RefreshInvoice**](InvoicesApi.md#refreshinvoice) | **PUT** /invoices/{id}/refresh | Refresh a draft invoice
 [**RetryPayment**](InvoicesApi.md#retrypayment) | **POST** /invoices/{id}/retry_payment | Retry invoice payment
@@ -14,9 +15,91 @@ Method | HTTP request | Description
 
 
 
+## CreateInvoice
+
+> Invoice CreateInvoice (InvoiceOneOffInput invoiceOneOffInput)
+
+Create a new invoice
+
+Create a new one off Invoice
+
+### Example
+
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Org.OpenAPITools.Api;
+using Org.OpenAPITools.Client;
+using Org.OpenAPITools.Model;
+
+namespace Example
+{
+    public class CreateInvoiceExample
+    {
+        public static void Main()
+        {
+            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
+            // Configure HTTP bearer authorization: bearerAuth
+            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new InvoicesApi(Configuration.Default);
+            var invoiceOneOffInput = new InvoiceOneOffInput(); // InvoiceOneOffInput | Invoice payload
+
+            try
+            {
+                // Create a new invoice
+                Invoice result = apiInstance.CreateInvoice(invoiceOneOffInput);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException e)
+            {
+                Debug.Print("Exception when calling InvoicesApi.CreateInvoice: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **invoiceOneOffInput** | [**InvoiceOneOffInput**](InvoiceOneOffInput.md)| Invoice payload | 
+
+### Return type
+
+[**Invoice**](Invoice.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful response |  -  |
+| **400** | Bad Request error |  -  |
+| **401** | Unauthorized error |  -  |
+| **422** | Unprocessable entity error |  -  |
+
+[[Back to top]](#)
+[[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DownloadInvoice
 
-> Invoice DownloadInvoice (string id)
+> Invoice DownloadInvoice (Guid id)
 
 Download an existing invoice
 
@@ -42,7 +125,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InvoicesApi(Configuration.Default);
-            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the existing Lago Invoice
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
 
             try
             {
@@ -66,7 +149,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of the existing Lago Invoice | 
+ **id** | **Guid**| ID of the existing Lago Invoice | 
 
 ### Return type
 
@@ -97,7 +180,7 @@ Name | Type | Description  | Notes
 
 ## FinalizeInvoice
 
-> Invoice FinalizeInvoice (string id)
+> Invoice FinalizeInvoice (Guid id)
 
 Finalize a draft invoice
 
@@ -123,7 +206,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InvoicesApi(Configuration.Default);
-            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the draft Lago Invoice
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the draft Lago Invoice
 
             try
             {
@@ -147,7 +230,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of the draft Lago Invoice | 
+ **id** | **Guid**| ID of the draft Lago Invoice | 
 
 ### Return type
 
@@ -178,7 +261,7 @@ Name | Type | Description  | Notes
 
 ## FindAllInvoices
 
-> Invoices FindAllInvoices (int? page = null, int? perPage = null, string externalCustomerId = null, string issuingDateFrom = null, string issuingDateTo = null, string status = null)
+> InvoicesPaginated FindAllInvoices (int? page = null, int? perPage = null, string externalCustomerId = null, DateTime? issuingDateFrom = null, DateTime? issuingDateTo = null, string status = null)
 
 Find all invoices
 
@@ -207,14 +290,14 @@ namespace Example
             var page = 2;  // int? | Number of page (optional) 
             var perPage = 20;  // int? | Number of records per page (optional) 
             var externalCustomerId = 12345;  // string | External customer ID (optional) 
-            var issuingDateFrom = 2022-07-08;  // string | Date from (optional) 
-            var issuingDateTo = 2022-08-09;  // string | Date to (optional) 
-            var status = draft;  // string | Status (draft or finalized) (optional) 
+            var issuingDateFrom = Fri Jul 08 00:00:00 UTC 2022;  // DateTime? | Date from (optional) 
+            var issuingDateTo = Tue Aug 09 00:00:00 UTC 2022;  // DateTime? | Date to (optional) 
+            var status = "draft";  // string | Status (optional) 
 
             try
             {
                 // Find all invoices
-                Invoices result = apiInstance.FindAllInvoices(page, perPage, externalCustomerId, issuingDateFrom, issuingDateTo, status);
+                InvoicesPaginated result = apiInstance.FindAllInvoices(page, perPage, externalCustomerId, issuingDateFrom, issuingDateTo, status);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -236,13 +319,13 @@ Name | Type | Description  | Notes
  **page** | **int?**| Number of page | [optional] 
  **perPage** | **int?**| Number of records per page | [optional] 
  **externalCustomerId** | **string**| External customer ID | [optional] 
- **issuingDateFrom** | **string**| Date from | [optional] 
- **issuingDateTo** | **string**| Date to | [optional] 
- **status** | **string**| Status (draft or finalized) | [optional] 
+ **issuingDateFrom** | **DateTime?**| Date from | [optional] 
+ **issuingDateTo** | **DateTime?**| Date to | [optional] 
+ **status** | **string**| Status | [optional] 
 
 ### Return type
 
-[**Invoices**](Invoices.md)
+[**InvoicesPaginated**](InvoicesPaginated.md)
 
 ### Authorization
 
@@ -268,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## FindInvoice
 
-> Invoice FindInvoice (string id)
+> Invoice FindInvoice (Guid id)
 
 Find invoice by ID
 
@@ -294,7 +377,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InvoicesApi(Configuration.Default);
-            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the existing Lago Invoice
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
 
             try
             {
@@ -318,7 +401,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of the existing Lago Invoice | 
+ **id** | **Guid**| ID of the existing Lago Invoice | 
 
 ### Return type
 
@@ -349,7 +432,7 @@ Name | Type | Description  | Notes
 
 ## RefreshInvoice
 
-> Invoice RefreshInvoice (string id)
+> Invoice RefreshInvoice (Guid id)
 
 Refresh a draft invoice
 
@@ -375,7 +458,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InvoicesApi(Configuration.Default);
-            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the existing Lago Invoice
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
 
             try
             {
@@ -399,7 +482,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of the existing Lago Invoice | 
+ **id** | **Guid**| ID of the existing Lago Invoice | 
 
 ### Return type
 
@@ -430,7 +513,7 @@ Name | Type | Description  | Notes
 
 ## RetryPayment
 
-> void RetryPayment (string id)
+> void RetryPayment (Guid id)
 
 Retry invoice payment
 
@@ -456,7 +539,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InvoicesApi(Configuration.Default);
-            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the existing Lago Invoice
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
 
             try
             {
@@ -479,7 +562,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of the existing Lago Invoice | 
+ **id** | **Guid**| ID of the existing Lago Invoice | 
 
 ### Return type
 
@@ -511,7 +594,7 @@ void (empty response body)
 
 ## UpdateInvoice
 
-> Invoice UpdateInvoice (string id, InvoiceInput invoiceInput)
+> Invoice UpdateInvoice (Guid id, InvoiceInput invoiceInput)
 
 Update an existing invoice status
 
@@ -537,7 +620,7 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new InvoicesApi(Configuration.Default);
-            var id = 183da83c-c007-4fbb-afcd-b00c07c41ffe;  // string | ID of the existing Lago Invoice
+            var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
             var invoiceInput = new InvoiceInput(); // InvoiceInput | Update an existing invoice
 
             try
@@ -562,7 +645,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| ID of the existing Lago Invoice | 
+ **id** | **Guid**| ID of the existing Lago Invoice | 
  **invoiceInput** | [**InvoiceInput**](InvoiceInput.md)| Update an existing invoice | 
 
 ### Return type

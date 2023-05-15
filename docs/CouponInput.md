@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Coupon** | [**CouponInputCoupon**](CouponInputCoupon.md) |  | [optional] 
+**Coupon** | [**CouponInputCoupon**](CouponInputCoupon.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

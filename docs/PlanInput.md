@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Plan** | [**PlanInputPlan**](PlanInputPlan.md) |  | [optional] 
+**Plan** | [**PlanInputPlan**](PlanInputPlan.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

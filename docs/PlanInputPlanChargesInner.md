@@ -5,9 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] 
-**BillableMetricId** | **string** |  | [optional] 
+**Id** | **Guid** |  | [optional] 
+**BillableMetricId** | **Guid** |  | [optional] 
 **ChargeModel** | **string** | Charge model type | [optional] 
+**Instant** | **bool** |  | [optional] 
+**MinAmountCents** | **int** |  | [optional] 
 **Properties** | **Object** |  | [optional] 
 **GroupProperties** | [**List&lt;PlanInputPlanChargesInnerGroupPropertiesInner&gt;**](PlanInputPlanChargesInnerGroupPropertiesInner.md) |  | [optional] 
 

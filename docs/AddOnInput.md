@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AddOn** | [**AddOnInputAddOn**](AddOnInputAddOn.md) |  | [optional] 
+**AddOn** | [**AddOnInputAddOn**](AddOnInputAddOn.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

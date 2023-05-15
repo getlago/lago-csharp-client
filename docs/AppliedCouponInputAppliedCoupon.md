@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExternalCustomerId** | **string** |  | [optional] 
-**CouponCode** | **string** |  | [optional] 
+**ExternalCustomerId** | **string** |  | 
+**CouponCode** | **string** |  | 
 **Frequency** | **string** | Frequency type | [optional] 
 **FrequencyDuration** | **int** |  | [optional] 
 **AmountCents** | **int** |  | [optional] 

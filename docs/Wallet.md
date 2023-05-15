@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_Wallet** | [**WalletObject**](WalletObject.md) |  | [optional] 
+**_Wallet** | [**WalletObject**](WalletObject.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

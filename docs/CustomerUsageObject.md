@@ -5,16 +5,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**FromDatetime** | **string** |  | [optional] 
-**ToDatetime** | **string** |  | [optional] 
-**IssuingDate** | **string** |  | [optional] 
-**AmountCents** | **int** |  | [optional] 
-**AmountCurrency** | **string** |  | [optional] 
-**TotalAmountCents** | **int** |  | [optional] 
-**TotalAmountCurrency** | **string** |  | [optional] 
-**VatAmountCents** | **int** |  | [optional] 
-**VatAmountCurrency** | **string** |  | [optional] 
-**ChargesUsage** | [**List&lt;ChargeUsageObject&gt;**](ChargeUsageObject.md) |  | [optional] 
+**FromDatetime** | **DateTime** |  | 
+**ToDatetime** | **DateTime** |  | 
+**IssuingDate** | **DateTime** |  | 
+**AmountCents** | **int** |  | 
+**AmountCurrency** | **string** |  | 
+**TotalAmountCents** | **int** |  | 
+**TotalAmountCurrency** | **string** |  | 
+**VatAmountCents** | **int** |  | 
+**VatAmountCurrency** | **string** |  | 
+**ChargesUsage** | [**List&lt;ChargeUsageObject&gt;**](ChargeUsageObject.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

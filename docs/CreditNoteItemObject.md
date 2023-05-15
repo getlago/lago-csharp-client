@@ -5,10 +5,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**AmountCents** | **int** |  | [optional] 
-**AmountCurrency** | **string** |  | [optional] 
-**Fee** | [**FeeObject**](FeeObject.md) |  | [optional] 
+**LagoId** | **Guid** |  | 
+**AmountCents** | **int** |  | 
+**AmountCurrency** | **string** |  | 
+**Fee** | [**FeeObject**](FeeObject.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

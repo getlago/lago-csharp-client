@@ -14,8 +14,9 @@ Name | Type | Description | Notes
 **PercentageRate** | **decimal** |  | [optional] 
 **Frequency** | **string** | Frequency type | [optional] 
 **FrequencyDuration** | **int** |  | [optional] 
-**ExpirationAt** | **string** |  | [optional] 
+**ExpirationAt** | **DateTime** |  | [optional] 
 **Expiration** | **string** | Expiration type | [optional] 
+**AppliesTo** | [**CouponInputCouponAppliesTo**](CouponInputCouponAppliesTo.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

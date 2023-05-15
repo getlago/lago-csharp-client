@@ -5,12 +5,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**InvoiceId** | **string** |  | [optional] 
-**Reason** | **string** | Reason | [optional] 
+**InvoiceId** | **Guid** |  | 
+**Reason** | **string** | Reason | 
 **Description** | **string** |  | [optional] 
-**CreditAmountCents** | **int** |  | [optional] 
-**RefundAmountCents** | **int** |  | [optional] 
-**Items** | [**List&lt;CreditNoteInputCreditNoteItemsInner&gt;**](CreditNoteInputCreditNoteItemsInner.md) |  | [optional] 
+**CreditAmountCents** | **int** |  | 
+**RefundAmountCents** | **int** |  | 
+**Items** | [**List&lt;CreditNoteInputCreditNoteItemsInner&gt;**](CreditNoteInputCreditNoteItemsInner.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)

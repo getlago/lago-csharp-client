@@ -5,14 +5,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LagoId** | **string** |  | [optional] 
-**LagoAddOnId** | **string** |  | [optional] 
-**AddOnCode** | **string** |  | [optional] 
-**LagoCustomerId** | **string** |  | [optional] 
-**ExternalCustomerId** | **string** |  | [optional] 
-**AmountCents** | **int** |  | [optional] 
-**AmountCurrency** | **string** |  | [optional] 
-**CreatedAt** | **string** |  | [optional] 
+**LagoId** | **Guid** |  | 
+**LagoAddOnId** | **Guid** |  | 
+**AddOnCode** | **string** |  | 
+**LagoCustomerId** | **Guid** |  | 
+**ExternalCustomerId** | **string** |  | 
+**AmountCents** | **int** |  | 
+**AmountCurrency** | **string** |  | 
+**CreatedAt** | **DateTime** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to API list]](../README.md#documentation-for-api-endpoints)
