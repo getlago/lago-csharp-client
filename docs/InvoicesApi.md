@@ -2,21 +2,19 @@
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CreateInvoice**](InvoicesApi.md#createinvoice) | **POST** /invoices | Create a new invoice
-[**DownloadInvoice**](InvoicesApi.md#downloadinvoice) | **POST** /invoices/{id}/download | Download an existing invoice
-[**FinalizeInvoice**](InvoicesApi.md#finalizeinvoice) | **PUT** /invoices/{id}/finalize | Finalize a draft invoice
-[**FindAllInvoices**](InvoicesApi.md#findallinvoices) | **GET** /invoices | Find all invoices
-[**FindInvoice**](InvoicesApi.md#findinvoice) | **GET** /invoices/{id} | Find invoice by ID
-[**RefreshInvoice**](InvoicesApi.md#refreshinvoice) | **PUT** /invoices/{id}/refresh | Refresh a draft invoice
-[**RetryPayment**](InvoicesApi.md#retrypayment) | **POST** /invoices/{id}/retry_payment | Retry invoice payment
-[**UpdateInvoice**](InvoicesApi.md#updateinvoice) | **PUT** /invoices/{id} | Update an existing invoice status
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CreateInvoice**](InvoicesApi.md#createinvoice) | **POST** /invoices | Create a new invoice |
+| [**DownloadInvoice**](InvoicesApi.md#downloadinvoice) | **POST** /invoices/{id}/download | Download an existing invoice |
+| [**FinalizeInvoice**](InvoicesApi.md#finalizeinvoice) | **PUT** /invoices/{id}/finalize | Finalize a draft invoice |
+| [**FindAllInvoices**](InvoicesApi.md#findallinvoices) | **GET** /invoices | Find all invoices |
+| [**FindInvoice**](InvoicesApi.md#findinvoice) | **GET** /invoices/{id} | Find invoice by ID |
+| [**RefreshInvoice**](InvoicesApi.md#refreshinvoice) | **PUT** /invoices/{id}/refresh | Refresh a draft invoice |
+| [**RetryPayment**](InvoicesApi.md#retrypayment) | **POST** /invoices/{id}/retry_payment | Retry invoice payment |
+| [**UpdateInvoice**](InvoicesApi.md#updateinvoice) | **PUT** /invoices/{id} | Update an existing invoice status |
 
-
-
-## CreateInvoice
-
+<a id="createinvoice"></a>
+# **CreateInvoice**
 > Invoice CreateInvoice (InvoiceOneOffInput invoiceOneOffInput)
 
 Create a new invoice
@@ -24,7 +22,6 @@ Create a new invoice
 Create a new one off Invoice
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -38,11 +35,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new InvoicesApi(Configuration.Default);
+            var apiInstance = new InvoicesApi(config);
             var invoiceOneOffInput = new InvoiceOneOffInput(); // InvoiceOneOffInput | Invoice payload
 
             try
@@ -51,10 +49,10 @@ namespace Example
                 Invoice result = apiInstance.CreateInvoice(invoiceOneOffInput);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InvoicesApi.CreateInvoice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling InvoicesApi.CreateInvoice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -62,12 +60,31 @@ namespace Example
 }
 ```
 
+#### Using the CreateInvoiceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a new invoice
+    ApiResponse<Invoice> response = apiInstance.CreateInvoiceWithHttpInfo(invoiceOneOffInput);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InvoicesApi.CreateInvoiceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **invoiceOneOffInput** | [**InvoiceOneOffInput**](InvoiceOneOffInput.md)| Invoice payload | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **invoiceOneOffInput** | [**InvoiceOneOffInput**](InvoiceOneOffInput.md) | Invoice payload |  |
 
 ### Return type
 
@@ -79,8 +96,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -91,14 +108,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **422** | Unprocessable entity error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## DownloadInvoice
-
+<a id="downloadinvoice"></a>
+# **DownloadInvoice**
 > Invoice DownloadInvoice (Guid id)
 
 Download an existing invoice
@@ -106,7 +119,6 @@ Download an existing invoice
 Download an existing invoice
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -120,11 +132,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new InvoicesApi(Configuration.Default);
+            var apiInstance = new InvoicesApi(config);
             var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
 
             try
@@ -133,10 +146,10 @@ namespace Example
                 Invoice result = apiInstance.DownloadInvoice(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InvoicesApi.DownloadInvoice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling InvoicesApi.DownloadInvoice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -144,12 +157,31 @@ namespace Example
 }
 ```
 
+#### Using the DownloadInvoiceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Download an existing invoice
+    ApiResponse<Invoice> response = apiInstance.DownloadInvoiceWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InvoicesApi.DownloadInvoiceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Guid**| ID of the existing Lago Invoice | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | ID of the existing Lago Invoice |  |
 
 ### Return type
 
@@ -161,8 +193,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -172,14 +204,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## FinalizeInvoice
-
+<a id="finalizeinvoice"></a>
+# **FinalizeInvoice**
 > Invoice FinalizeInvoice (Guid id)
 
 Finalize a draft invoice
@@ -187,7 +215,6 @@ Finalize a draft invoice
 Finalize a draft invoice
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -201,11 +228,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new InvoicesApi(Configuration.Default);
+            var apiInstance = new InvoicesApi(config);
             var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the draft Lago Invoice
 
             try
@@ -214,10 +242,10 @@ namespace Example
                 Invoice result = apiInstance.FinalizeInvoice(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InvoicesApi.FinalizeInvoice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling InvoicesApi.FinalizeInvoice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -225,12 +253,31 @@ namespace Example
 }
 ```
 
+#### Using the FinalizeInvoiceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Finalize a draft invoice
+    ApiResponse<Invoice> response = apiInstance.FinalizeInvoiceWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InvoicesApi.FinalizeInvoiceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Guid**| ID of the draft Lago Invoice | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | ID of the draft Lago Invoice |  |
 
 ### Return type
 
@@ -242,8 +289,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -253,14 +300,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## FindAllInvoices
-
+<a id="findallinvoices"></a>
+# **FindAllInvoices**
 > InvoicesPaginated FindAllInvoices (int? page = null, int? perPage = null, string externalCustomerId = null, DateTime? issuingDateFrom = null, DateTime? issuingDateTo = null, string status = null)
 
 Find all invoices
@@ -268,7 +311,6 @@ Find all invoices
 Find all invoices in certain organisation
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -282,11 +324,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new InvoicesApi(Configuration.Default);
+            var apiInstance = new InvoicesApi(config);
             var page = 2;  // int? | Number of page (optional) 
             var perPage = 20;  // int? | Number of records per page (optional) 
             var externalCustomerId = 12345;  // string | External customer ID (optional) 
@@ -300,10 +343,10 @@ namespace Example
                 InvoicesPaginated result = apiInstance.FindAllInvoices(page, perPage, externalCustomerId, issuingDateFrom, issuingDateTo, status);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InvoicesApi.FindAllInvoices: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling InvoicesApi.FindAllInvoices: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -311,17 +354,36 @@ namespace Example
 }
 ```
 
+#### Using the FindAllInvoicesWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Find all invoices
+    ApiResponse<InvoicesPaginated> response = apiInstance.FindAllInvoicesWithHttpInfo(page, perPage, externalCustomerId, issuingDateFrom, issuingDateTo, status);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InvoicesApi.FindAllInvoicesWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int?**| Number of page | [optional] 
- **perPage** | **int?**| Number of records per page | [optional] 
- **externalCustomerId** | **string**| External customer ID | [optional] 
- **issuingDateFrom** | **DateTime?**| Date from | [optional] 
- **issuingDateTo** | **DateTime?**| Date to | [optional] 
- **status** | **string**| Status | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **page** | **int?** | Number of page | [optional]  |
+| **perPage** | **int?** | Number of records per page | [optional]  |
+| **externalCustomerId** | **string** | External customer ID | [optional]  |
+| **issuingDateFrom** | **DateTime?** | Date from | [optional]  |
+| **issuingDateTo** | **DateTime?** | Date to | [optional]  |
+| **status** | **string** | Status | [optional]  |
 
 ### Return type
 
@@ -333,8 +395,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -343,14 +405,10 @@ Name | Type | Description  | Notes
 | **200** | Successful response |  -  |
 | **401** | Unauthorized error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## FindInvoice
-
+<a id="findinvoice"></a>
+# **FindInvoice**
 > Invoice FindInvoice (Guid id)
 
 Find invoice by ID
@@ -358,7 +416,6 @@ Find invoice by ID
 Return a single invoice
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -372,11 +429,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new InvoicesApi(Configuration.Default);
+            var apiInstance = new InvoicesApi(config);
             var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
 
             try
@@ -385,10 +443,10 @@ namespace Example
                 Invoice result = apiInstance.FindInvoice(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InvoicesApi.FindInvoice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling InvoicesApi.FindInvoice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -396,12 +454,31 @@ namespace Example
 }
 ```
 
+#### Using the FindInvoiceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Find invoice by ID
+    ApiResponse<Invoice> response = apiInstance.FindInvoiceWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InvoicesApi.FindInvoiceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Guid**| ID of the existing Lago Invoice | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | ID of the existing Lago Invoice |  |
 
 ### Return type
 
@@ -413,8 +490,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -424,14 +501,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## RefreshInvoice
-
+<a id="refreshinvoice"></a>
+# **RefreshInvoice**
 > Invoice RefreshInvoice (Guid id)
 
 Refresh a draft invoice
@@ -439,7 +512,6 @@ Refresh a draft invoice
 Refresh a draft invoice
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -453,11 +525,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new InvoicesApi(Configuration.Default);
+            var apiInstance = new InvoicesApi(config);
             var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
 
             try
@@ -466,10 +539,10 @@ namespace Example
                 Invoice result = apiInstance.RefreshInvoice(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InvoicesApi.RefreshInvoice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling InvoicesApi.RefreshInvoice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -477,12 +550,31 @@ namespace Example
 }
 ```
 
+#### Using the RefreshInvoiceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Refresh a draft invoice
+    ApiResponse<Invoice> response = apiInstance.RefreshInvoiceWithHttpInfo(id);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InvoicesApi.RefreshInvoiceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Guid**| ID of the existing Lago Invoice | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | ID of the existing Lago Invoice |  |
 
 ### Return type
 
@@ -494,8 +586,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -505,14 +597,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## RetryPayment
-
+<a id="retrypayment"></a>
+# **RetryPayment**
 > void RetryPayment (Guid id)
 
 Retry invoice payment
@@ -520,7 +608,6 @@ Retry invoice payment
 Retry invoice payment
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -534,11 +621,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new InvoicesApi(Configuration.Default);
+            var apiInstance = new InvoicesApi(config);
             var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
 
             try
@@ -546,10 +634,10 @@ namespace Example
                 // Retry invoice payment
                 apiInstance.RetryPayment(id);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InvoicesApi.RetryPayment: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling InvoicesApi.RetryPayment: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -557,12 +645,28 @@ namespace Example
 }
 ```
 
+#### Using the RetryPaymentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Retry invoice payment
+    apiInstance.RetryPaymentWithHttpInfo(id);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InvoicesApi.RetryPaymentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Guid**| ID of the existing Lago Invoice | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | ID of the existing Lago Invoice |  |
 
 ### Return type
 
@@ -574,8 +678,8 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -586,14 +690,10 @@ void (empty response body)
 | **404** | Not Found error |  -  |
 | **405** | Not Allowed error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## UpdateInvoice
-
+<a id="updateinvoice"></a>
+# **UpdateInvoice**
 > Invoice UpdateInvoice (Guid id, InvoiceInput invoiceInput)
 
 Update an existing invoice status
@@ -601,7 +701,6 @@ Update an existing invoice status
 Update an existing invoice
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -615,11 +714,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new InvoicesApi(Configuration.Default);
+            var apiInstance = new InvoicesApi(config);
             var id = 1a901a90-1a90-1a90-1a90-1a901a901a90;  // Guid | ID of the existing Lago Invoice
             var invoiceInput = new InvoiceInput(); // InvoiceInput | Update an existing invoice
 
@@ -629,10 +729,10 @@ namespace Example
                 Invoice result = apiInstance.UpdateInvoice(id, invoiceInput);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling InvoicesApi.UpdateInvoice: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling InvoicesApi.UpdateInvoice: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -640,13 +740,32 @@ namespace Example
 }
 ```
 
+#### Using the UpdateInvoiceWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update an existing invoice status
+    ApiResponse<Invoice> response = apiInstance.UpdateInvoiceWithHttpInfo(id, invoiceInput);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling InvoicesApi.UpdateInvoiceWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Guid**| ID of the existing Lago Invoice | 
- **invoiceInput** | [**InvoiceInput**](InvoiceInput.md)| Update an existing invoice | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | ID of the existing Lago Invoice |  |
+| **invoiceInput** | [**InvoiceInput**](InvoiceInput.md) | Update an existing invoice |  |
 
 ### Return type
 
@@ -658,8 +777,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -671,8 +790,5 @@ Name | Type | Description  | Notes
 | **404** | Not Found error |  -  |
 | **422** | Unprocessable entity error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,13 +1,10 @@
-
 # Org.OpenAPITools.Model.BatchEventInput
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Event** | [**BatchEventInputEvent**](BatchEventInputEvent.md) |  | 
+**VarEvent** | [**BatchEventInputEvent**](BatchEventInputEvent.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

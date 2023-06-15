@@ -2,14 +2,12 @@
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**UpdateOrganization**](OrganizationsApi.md#updateorganization) | **PUT** /organizations | Update an existing Organization
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**UpdateOrganization**](OrganizationsApi.md#updateorganization) | **PUT** /organizations | Update an existing Organization |
 
-
-
-## UpdateOrganization
-
+<a id="updateorganization"></a>
+# **UpdateOrganization**
 > Organization UpdateOrganization (OrganizationInput organizationInput)
 
 Update an existing Organization
@@ -17,7 +15,6 @@ Update an existing Organization
 Update an existing organization
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,11 +28,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new OrganizationsApi(Configuration.Default);
+            var apiInstance = new OrganizationsApi(config);
             var organizationInput = new OrganizationInput(); // OrganizationInput | Update an existing organization
 
             try
@@ -44,10 +42,10 @@ namespace Example
                 Organization result = apiInstance.UpdateOrganization(organizationInput);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling OrganizationsApi.UpdateOrganization: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling OrganizationsApi.UpdateOrganization: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -55,12 +53,31 @@ namespace Example
 }
 ```
 
+#### Using the UpdateOrganizationWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update an existing Organization
+    ApiResponse<Organization> response = apiInstance.UpdateOrganizationWithHttpInfo(organizationInput);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling OrganizationsApi.UpdateOrganizationWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **organizationInput** | [**OrganizationInput**](OrganizationInput.md)| Update an existing organization | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **organizationInput** | [**OrganizationInput**](OrganizationInput.md) | Update an existing organization |  |
 
 ### Return type
 
@@ -72,8 +89,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -84,8 +101,5 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **422** | Unprocessable entity error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

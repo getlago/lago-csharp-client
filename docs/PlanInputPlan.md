@@ -1,4 +1,3 @@
-
 # Org.OpenAPITools.Model.PlanInputPlan
 
 ## Properties
@@ -16,7 +15,5 @@ Name | Type | Description | Notes
 **BillChargesMonthly** | **bool** |  | [optional] 
 **Charges** | [**List&lt;PlanInputPlanChargesInner&gt;**](PlanInputPlanChargesInner.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

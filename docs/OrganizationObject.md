@@ -1,4 +1,3 @@
-
 # Org.OpenAPITools.Model.OrganizationObject
 
 ## Properties
@@ -18,10 +17,9 @@ Name | Type | Description | Notes
 **City** | **string** |  | [optional] 
 **LegalName** | **string** |  | [optional] 
 **LegalNumber** | **string** |  | [optional] 
+**TaxIdentificationNumber** | **string** |  | [optional] 
 **Timezone** | **string** |  | [optional] 
 **BillingConfiguration** | [**BillingConfigurationOrganization**](BillingConfigurationOrganization.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

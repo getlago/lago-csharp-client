@@ -1,4 +1,3 @@
-
 # Org.OpenAPITools.Model.CustomerUsageObject
 
 ## Properties
@@ -16,7 +15,5 @@ Name | Type | Description | Notes
 **VatAmountCurrency** | **string** |  | 
 **ChargesUsage** | [**List&lt;ChargeUsageObject&gt;**](ChargeUsageObject.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

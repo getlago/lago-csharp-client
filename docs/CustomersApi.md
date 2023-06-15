@@ -2,20 +2,18 @@
 
 All URIs are relative to *https://api.getlago.com/api/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**CreateCustomer**](CustomersApi.md#createcustomer) | **POST** /customers | Create a customer
-[**DeleteAppliedCoupon**](CustomersApi.md#deleteappliedcoupon) | **DELETE** /customers/{customer_external_id}/applied_coupons/{applied_coupon_id} | Delete customer&#39;s appplied coupon
-[**DestroyCustomer**](CustomersApi.md#destroycustomer) | **DELETE** /customers/{external_id} | Delete a customer
-[**FindAllCustomers**](CustomersApi.md#findallcustomers) | **GET** /customers | Find customers
-[**FindCustomer**](CustomersApi.md#findcustomer) | **GET** /customers/{external_id} | Find customer by external ID
-[**FindCustomerCurrentUsage**](CustomersApi.md#findcustomercurrentusage) | **GET** /customers/{customer_external_id}/current_usage | Find customer current usage
-[**GetCustomerPortalUrl**](CustomersApi.md#getcustomerportalurl) | **GET** /customers/{customer_external_id}/portal_url | Get customer portal URL
+| Method | HTTP request | Description |
+|--------|--------------|-------------|
+| [**CreateCustomer**](CustomersApi.md#createcustomer) | **POST** /customers | Create a customer |
+| [**DeleteAppliedCoupon**](CustomersApi.md#deleteappliedcoupon) | **DELETE** /customers/{customer_external_id}/applied_coupons/{applied_coupon_id} | Delete customer&#39;s appplied coupon |
+| [**DestroyCustomer**](CustomersApi.md#destroycustomer) | **DELETE** /customers/{external_id} | Delete a customer |
+| [**FindAllCustomers**](CustomersApi.md#findallcustomers) | **GET** /customers | Find customers |
+| [**FindCustomer**](CustomersApi.md#findcustomer) | **GET** /customers/{external_id} | Find customer by external ID |
+| [**FindCustomerCurrentUsage**](CustomersApi.md#findcustomercurrentusage) | **GET** /customers/{customer_external_id}/current_usage | Find customer current usage |
+| [**GetCustomerPortalUrl**](CustomersApi.md#getcustomerportalurl) | **GET** /customers/{customer_external_id}/portal_url | Get customer portal URL |
 
-
-
-## CreateCustomer
-
+<a id="createcustomer"></a>
+# **CreateCustomer**
 > Customer CreateCustomer (CustomerInput customerInput)
 
 Create a customer
@@ -23,7 +21,6 @@ Create a customer
 Create a new customer
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -37,11 +34,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new CustomersApi(Configuration.Default);
+            var apiInstance = new CustomersApi(config);
             var customerInput = new CustomerInput(); // CustomerInput | Customer payload
 
             try
@@ -50,10 +48,10 @@ namespace Example
                 Customer result = apiInstance.CreateCustomer(customerInput);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CustomersApi.CreateCustomer: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CustomersApi.CreateCustomer: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -61,12 +59,31 @@ namespace Example
 }
 ```
 
+#### Using the CreateCustomerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create a customer
+    ApiResponse<Customer> response = apiInstance.CreateCustomerWithHttpInfo(customerInput);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CustomersApi.CreateCustomerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerInput** | [**CustomerInput**](CustomerInput.md)| Customer payload | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **customerInput** | [**CustomerInput**](CustomerInput.md) | Customer payload |  |
 
 ### Return type
 
@@ -78,8 +95,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -90,14 +107,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **422** | Unprocessable entity error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## DeleteAppliedCoupon
-
+<a id="deleteappliedcoupon"></a>
+# **DeleteAppliedCoupon**
 > AppliedCoupon DeleteAppliedCoupon (string customerExternalId, string appliedCouponId)
 
 Delete customer's appplied coupon
@@ -105,7 +118,6 @@ Delete customer's appplied coupon
 Delete customer's appplied coupon
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -119,11 +131,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new CustomersApi(Configuration.Default);
+            var apiInstance = new CustomersApi(config);
             var customerExternalId = 12345;  // string | External ID of the existing customer
             var appliedCouponId = 54321;  // string | Applied Coupon Lago ID
 
@@ -133,10 +146,10 @@ namespace Example
                 AppliedCoupon result = apiInstance.DeleteAppliedCoupon(customerExternalId, appliedCouponId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CustomersApi.DeleteAppliedCoupon: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CustomersApi.DeleteAppliedCoupon: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -144,13 +157,32 @@ namespace Example
 }
 ```
 
+#### Using the DeleteAppliedCouponWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete customer's appplied coupon
+    ApiResponse<AppliedCoupon> response = apiInstance.DeleteAppliedCouponWithHttpInfo(customerExternalId, appliedCouponId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CustomersApi.DeleteAppliedCouponWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerExternalId** | **string**| External ID of the existing customer | 
- **appliedCouponId** | **string**| Applied Coupon Lago ID | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **customerExternalId** | **string** | External ID of the existing customer |  |
+| **appliedCouponId** | **string** | Applied Coupon Lago ID |  |
 
 ### Return type
 
@@ -162,8 +194,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -173,14 +205,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## DestroyCustomer
-
+<a id="destroycustomer"></a>
+# **DestroyCustomer**
 > Customer DestroyCustomer (string externalId)
 
 Delete a customer
@@ -188,7 +216,6 @@ Delete a customer
 Return the deleted customer
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -202,11 +229,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new CustomersApi(Configuration.Default);
+            var apiInstance = new CustomersApi(config);
             var externalId = 12345;  // string | External ID of the existing customer
 
             try
@@ -215,10 +243,10 @@ namespace Example
                 Customer result = apiInstance.DestroyCustomer(externalId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CustomersApi.DestroyCustomer: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CustomersApi.DestroyCustomer: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -226,12 +254,31 @@ namespace Example
 }
 ```
 
+#### Using the DestroyCustomerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a customer
+    ApiResponse<Customer> response = apiInstance.DestroyCustomerWithHttpInfo(externalId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CustomersApi.DestroyCustomerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **externalId** | **string**| External ID of the existing customer | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **externalId** | **string** | External ID of the existing customer |  |
 
 ### Return type
 
@@ -243,8 +290,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -254,14 +301,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## FindAllCustomers
-
+<a id="findallcustomers"></a>
+# **FindAllCustomers**
 > CustomersPaginated FindAllCustomers (int? page = null, int? perPage = null)
 
 Find customers
@@ -269,7 +312,6 @@ Find customers
 Find all customers in certain organisation
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -283,11 +325,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new CustomersApi(Configuration.Default);
+            var apiInstance = new CustomersApi(config);
             var page = 2;  // int? | Number of page (optional) 
             var perPage = 20;  // int? | Number of records per page (optional) 
 
@@ -297,10 +340,10 @@ namespace Example
                 CustomersPaginated result = apiInstance.FindAllCustomers(page, perPage);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CustomersApi.FindAllCustomers: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CustomersApi.FindAllCustomers: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -308,13 +351,32 @@ namespace Example
 }
 ```
 
+#### Using the FindAllCustomersWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Find customers
+    ApiResponse<CustomersPaginated> response = apiInstance.FindAllCustomersWithHttpInfo(page, perPage);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CustomersApi.FindAllCustomersWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **page** | **int?**| Number of page | [optional] 
- **perPage** | **int?**| Number of records per page | [optional] 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **page** | **int?** | Number of page | [optional]  |
+| **perPage** | **int?** | Number of records per page | [optional]  |
 
 ### Return type
 
@@ -326,8 +388,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -336,14 +398,10 @@ Name | Type | Description  | Notes
 | **200** | Successful response |  -  |
 | **401** | Unauthorized error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## FindCustomer
-
+<a id="findcustomer"></a>
+# **FindCustomer**
 > Customer FindCustomer (string externalId)
 
 Find customer by external ID
@@ -351,7 +409,6 @@ Find customer by external ID
 Return a single customer
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -365,11 +422,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new CustomersApi(Configuration.Default);
+            var apiInstance = new CustomersApi(config);
             var externalId = 12345;  // string | External ID of the existing customer
 
             try
@@ -378,10 +436,10 @@ namespace Example
                 Customer result = apiInstance.FindCustomer(externalId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CustomersApi.FindCustomer: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CustomersApi.FindCustomer: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -389,12 +447,31 @@ namespace Example
 }
 ```
 
+#### Using the FindCustomerWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Find customer by external ID
+    ApiResponse<Customer> response = apiInstance.FindCustomerWithHttpInfo(externalId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CustomersApi.FindCustomerWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **externalId** | **string**| External ID of the existing customer | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **externalId** | **string** | External ID of the existing customer |  |
 
 ### Return type
 
@@ -406,8 +483,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -417,14 +494,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## FindCustomerCurrentUsage
-
+<a id="findcustomercurrentusage"></a>
+# **FindCustomerCurrentUsage**
 > CustomerUsage FindCustomerCurrentUsage (string customerExternalId, string externalSubscriptionId)
 
 Find customer current usage
@@ -432,7 +505,6 @@ Find customer current usage
 Return a customer current usage
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -446,11 +518,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new CustomersApi(Configuration.Default);
+            var apiInstance = new CustomersApi(config);
             var customerExternalId = 12345;  // string | External ID of the existing customer
             var externalSubscriptionId = 54321;  // string | External subscription ID
 
@@ -460,10 +533,10 @@ namespace Example
                 CustomerUsage result = apiInstance.FindCustomerCurrentUsage(customerExternalId, externalSubscriptionId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CustomersApi.FindCustomerCurrentUsage: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CustomersApi.FindCustomerCurrentUsage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -471,13 +544,32 @@ namespace Example
 }
 ```
 
+#### Using the FindCustomerCurrentUsageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Find customer current usage
+    ApiResponse<CustomerUsage> response = apiInstance.FindCustomerCurrentUsageWithHttpInfo(customerExternalId, externalSubscriptionId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CustomersApi.FindCustomerCurrentUsageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerExternalId** | **string**| External ID of the existing customer | 
- **externalSubscriptionId** | **string**| External subscription ID | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **customerExternalId** | **string** | External ID of the existing customer |  |
+| **externalSubscriptionId** | **string** | External subscription ID |  |
 
 ### Return type
 
@@ -489,8 +581,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -500,14 +592,10 @@ Name | Type | Description  | Notes
 | **401** | Unauthorized error |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## GetCustomerPortalUrl
-
+<a id="getcustomerportalurl"></a>
+# **GetCustomerPortalUrl**
 > GetCustomerPortalUrl200Response GetCustomerPortalUrl (string customerExternalId)
 
 Get customer portal URL
@@ -515,7 +603,6 @@ Get customer portal URL
 Get customer portal URL
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -529,11 +616,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://api.getlago.com/api/v1";
-            // Configure HTTP bearer authorization: bearerAuth
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            Configuration config = new Configuration();
+            config.BasePath = "https://api.getlago.com/api/v1";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
 
-            var apiInstance = new CustomersApi(Configuration.Default);
+            var apiInstance = new CustomersApi(config);
             var customerExternalId = 12345;  // string | External ID of the existing customer
 
             try
@@ -542,10 +630,10 @@ namespace Example
                 GetCustomerPortalUrl200Response result = apiInstance.GetCustomerPortalUrl(customerExternalId);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
-                Debug.Print("Exception when calling CustomersApi.GetCustomerPortalUrl: " + e.Message );
-                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print("Exception when calling CustomersApi.GetCustomerPortalUrl: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
                 Debug.Print(e.StackTrace);
             }
         }
@@ -553,12 +641,31 @@ namespace Example
 }
 ```
 
+#### Using the GetCustomerPortalUrlWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get customer portal URL
+    ApiResponse<GetCustomerPortalUrl200Response> response = apiInstance.GetCustomerPortalUrlWithHttpInfo(customerExternalId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling CustomersApi.GetCustomerPortalUrlWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **customerExternalId** | **string**| External ID of the existing customer | 
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **customerExternalId** | **string** | External ID of the existing customer |  |
 
 ### Return type
 
@@ -570,8 +677,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 
 ### HTTP response details
@@ -582,8 +689,5 @@ Name | Type | Description  | Notes
 | **403** | Forbidden |  -  |
 | **404** | Not Found error |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

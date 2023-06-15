@@ -1,4 +1,3 @@
-
 # Org.OpenAPITools.Model.OrganizationInputOrganization
 
 ## Properties
@@ -15,11 +14,10 @@ Name | Type | Description | Notes
 **City** | **string** |  | [optional] 
 **LegalName** | **string** |  | [optional] 
 **LegalNumber** | **string** |  | [optional] 
+**TaxIdentificationNumber** | **string** |  | [optional] 
 **Timezone** | **string** |  | [optional] 
 **EmailSettings** | **List&lt;OrganizationInputOrganization.EmailSettingsEnum&gt;** |  | [optional] 
 **BillingConfiguration** | [**BillingConfigurationOrganization**](BillingConfigurationOrganization.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
