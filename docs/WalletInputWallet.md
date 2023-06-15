@@ -1,4 +1,3 @@
-
 # Org.OpenAPITools.Model.WalletInputWallet
 
 ## Properties
@@ -13,7 +12,5 @@ Name | Type | Description | Notes
 **ExternalCustomerId** | **string** |  | 
 **ExpirationAt** | **DateTime** |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

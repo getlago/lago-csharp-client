@@ -1,13 +1,10 @@
-
 # Org.OpenAPITools.Model.CreditNotes
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_CreditNotes** | [**List&lt;CreditNoteObject&gt;**](CreditNoteObject.md) |  | 
+**VarCreditNotes** | [**List&lt;CreditNoteObject&gt;**](CreditNoteObject.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

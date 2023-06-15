@@ -1,4 +1,3 @@
-
 # Org.OpenAPITools.Model.CreditNoteInputCreditNote
 
 ## Properties
@@ -12,7 +11,5 @@ Name | Type | Description | Notes
 **RefundAmountCents** | **int** |  | 
 **Items** | [**List&lt;CreditNoteInputCreditNoteItemsInner&gt;**](CreditNoteInputCreditNoteItemsInner.md) |  | 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

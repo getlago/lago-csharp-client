@@ -1,4 +1,3 @@
-
 # Org.OpenAPITools.Model.CustomerInputCustomer
 
 ## Properties
@@ -19,12 +18,11 @@ Name | Type | Description | Notes
 **LagoUrl** | **string** |  | [optional] 
 **LegalName** | **string** |  | [optional] 
 **LegalNumber** | **string** |  | [optional] 
+**TaxIdentificationNumber** | **string** |  | [optional] 
 **Currency** | **string** |  | [optional] 
 **Timezone** | **string** |  | [optional] 
 **BillingConfiguration** | [**BillingConfigurationCustomer**](BillingConfigurationCustomer.md) |  | [optional] 
 **Metadata** | [**List&lt;CustomerInputCustomerMetadataInner&gt;**](CustomerInputCustomerMetadataInner.md) |  | [optional] 
 
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to README]](../README.md)
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
